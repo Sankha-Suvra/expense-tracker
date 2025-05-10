@@ -1,0 +1,20 @@
+node_modules
+
+# Ignore all .txt files
+*.txt
+
+# But don't ignore important.txt
+!*important.txt
+
+# Ignore all .log files, no matter where they're located
+**/*.log
+
+# Ignore any directory named temp
+**/temp
+
+# Ignore single-character .js files (like a.js, b.js, etc.)
+?.js
+.git
+.gitignore
+.env
+.env.docker
