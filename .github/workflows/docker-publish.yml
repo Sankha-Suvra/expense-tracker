@@ -24,6 +24,7 @@ jobs:
 
       # Step 3: Build Docker image
       - name: Build the Docker image
+        working-directory: ./backend
         run: | 
           docker build \ 
             -t sankhasuvra/expense-tracker:v1 \
