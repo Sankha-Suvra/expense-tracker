@@ -42,11 +42,20 @@ jobs:
       - name: Build the Docker image
         working-directory: ./backend
         run: | 
+          echo "--- Inside Build Step (current working-directory should be ./backend) ---"
+          echo "Current directory: $(pwd)"
+          echo "Listing files in current directory (should be contents of backend/):"
+          ls -la # Verify 'dockerfile' (lowercase) is here and other backend files
+
+          echo "Attempting to build Docker image..."
+
           docker build \ 
             -t sankhasuvra/expense-tracker:v1 \
             -t sankhasuvra/expense-tracker:${{ github.sha }} \
             .
 
+          echo "docker build command finished"
+          echo "--- End of Build Step ---"
       # Step 4: Push Docker image to DockerHub
       - name: Push the Docker image
         run: |
