@@ -37,7 +37,7 @@ jobs:
           docker push sankhasuvra/expense-tracker:${{ github.sha }}
       # Step 5: Trigger Railway Deployment
       - name: Deploy to Railway
-        uses: railwayapp/action-deploy@v1.0.4 # Or the latest version
+        uses: railwayapp/action-deploy@v1 # Or the latest version
         with:
           railway_token: ${{ secrets.RAILWAY_TOKEN }}
           service: "99c3c939-7b41-4b2a-841e-07c4e82d50a7"
