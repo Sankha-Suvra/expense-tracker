@@ -47,12 +47,8 @@ jobs:
       #     timeout: 600
 
       # Step 5 :Trigger Railway Deployment using cli
-      - name: Install Railway CLI
-        run: npm install -g @railway/cli
-
       - name: Trigger Railway Deploy
-        env:
-          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
         run: |
-          railway init --project 2d7cf0a1-6799-4ff1-80b4-488dd161bb06 --service 99c3c939-7b41-4b2a-841e-07c4e82d50a7
-          railway up --service 99c3c939-7b41-4b2a-841e-07c4e82d50a7
+          npm install -g @railway/cli
+          railway login --token ${{ secrets.RAILWAY_TOKEN }}
+          railway up --no-build
