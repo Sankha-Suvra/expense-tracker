@@ -54,9 +54,6 @@ jobs:
           RAILWAY_SERVICE_ID: "99c3c939-7b41-4b2a-841e-07c4e82d50a7"
         run: |
           npm install -g @railway/cli
-          
-          echo "Installed Railway CLI version:"
-          railway version
 
           echo "Deploying image to Railway..."
           railway up --image "sankhasuvra/expense-tracker:v1" --detach
