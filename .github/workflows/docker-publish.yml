@@ -48,7 +48,7 @@ jobs:
 
       # Step 5 :Trigger Railway Deployment using cli
       - name: Install Railway CLI
-        run: npm install -g railway
+        run: npm install -g @railway/cli
 
       - name: Trigger Railway Deploy
         env:
