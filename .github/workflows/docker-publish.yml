@@ -50,5 +50,7 @@ jobs:
       - name: Trigger Railway Deploy
         run: |
           npm install -g @railway/cli
-          railway login --token ${{ secrets.RAILWAY_TOKEN }}
-          railway up --no-build
+          railway up \
+            --project "2d7cf0a1-6799-4ff1-80b4-488dd161bb06" \
+            --service "99c3c939-7b41-4b2a-841e-07c4e82d50a7" \
+            --image "sankhasuvra/expense-tracker:v1"
