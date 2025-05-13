@@ -31,6 +31,16 @@ app.use('/api/v1/expense', expenseRoutes)
 app.use('/api/v1/dashboard', dashboardRoutes)
 
 
+//Health Check Routes
+
+app.get('/', (req, res) => {
+  res.send('✅ Expense Tracker API is running');
+});
+
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'OK', uptime: process.uptime() });
+});
+
 //Demo Routes START------
 
 app.get('/api/v1/demo/income', (req, res) => {
